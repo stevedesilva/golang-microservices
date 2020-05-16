@@ -1,9 +1,9 @@
-package main
+package app
 
 import (
 	"net/http"
 
-	"github.com/stevedesilva/golang-microservices/controllers"
+	"github.com/stevedesilva/golang-microservices/mvc/controllers"
 )
 
 // StartApp entry point
@@ -13,13 +13,5 @@ func StartApp() {
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		panic(err)
 	}
-
-	// http.HandleFunc("/users", func(writer http.ResponseWriter, request *http.Request) {
-	// 	writer.Write([]byte("hello world!\n"))
-	// })
-
-	// if err := http.ListenAndServe(":8080", nil); err != nil {
-	// 	panic(err)
-	// }
 
 }
