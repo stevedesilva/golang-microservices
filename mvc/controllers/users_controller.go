@@ -11,7 +11,7 @@ import (
 
 // GetUser func
 func GetUser(resp http.ResponseWriter, req *http.Request) {
-	userID, err := strconv.ParseInt(req.URL.Query().Get("user_id"), 10, 64)
+	userID, err := strconv.Atoi(req.URL.Query().Get("user_id"))
 	if err != nil {
 		apiErr := &utils.ApplicationError{
 			Message:    "user_id must be a number",

@@ -6,6 +6,6 @@ import (
 )
 
 // GetUser func
-func GetUser(userID int64) (*domain.User, *utils.ApplicationError) {
+func GetUser(userID int) (*domain.User, *utils.ApplicationError) {
 	return domain.GetUser(userID)
 }
