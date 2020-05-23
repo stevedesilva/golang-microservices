@@ -5,7 +5,17 @@ import (
 	"github.com/stevedesilva/golang-microservices/mvc/utils"
 )
 
+// UsersService var expose singleton
+var UsersService usersService
+
+type usersService struct{}
+
 // GetUser func
-func GetUser(userID int) (*domain.User, *utils.ApplicationError) {
-	return domain.GetUser(userID)
+func (u *usersService) GetUser(userID int) (*domain.User, *utils.ApplicationError) {
+
+	user, err := domain.UserDao.GetUser(userID)
+	if err != nil {
+		return nil, err
+	}
+	return user, nil
 }
