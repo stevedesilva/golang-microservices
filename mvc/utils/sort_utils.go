@@ -19,6 +19,7 @@ func BubbleSort(elements []int) {
 
 }
 
+// Sort alg
 func Sort(elements []int) {
 	if len(elements) < 1000 {
 		BubbleSort(elements)
