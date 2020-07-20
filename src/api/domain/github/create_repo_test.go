@@ -56,11 +56,11 @@ type CreateRepoResponse struct {
 func TestCreateRepoResponseAsJson(t *testing.T) {
 	// marshalling
 	response := CreateRepoResponse{
-		ID:         1,
-		Name:       "Steve",
-		FullName:   "Steve deSilva",
-		Owner:      RepoOwner{ID: 1, Login: "login", Url: "url", HtmlUrl: "htmlUrl"},
-		Permssions: RepoPermissions{IsAdmin: true, IsPush: true, IsPull: true},
+		ID:          1,
+		Name:        "Steve",
+		FullName:    "Steve deSilva",
+		Owner:       RepoOwner{ID: 1, Login: "login", Url: "url", HtmlUrl: "htmlUrl"},
+		Permissions: RepoPermissions{IsAdmin: true, IsPush: true, IsPull: true},
 	}
 
 	bytes, err := json.Marshal(response)
@@ -77,5 +77,5 @@ func TestCreateRepoResponseAsJson(t *testing.T) {
 	assert.EqualValues(t, response.Name, target.Name)
 	assert.EqualValues(t, response.FullName, target.FullName)
 	assert.EqualValues(t, response.Owner, target.Owner)
-	assert.EqualValues(t, response.Permssions, target.Permssions)
+	assert.EqualValues(t, response.Permissions, target.Perimssions)
 }
