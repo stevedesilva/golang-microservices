@@ -26,6 +26,7 @@ func GetAuthorizationHeader(accessToken string) string {
 func CreateRepo(accessToken string, request github.CreateRepoRequest) (*github.CreateRepoResponse, *github.GithubErrorResponse) {
 	header := http.Header{}
 	header.Set(HeaderAuthorization, GetAuthorizationHeader(accessToken))
+	fmt.Println("header: ", header)
 
 	response, err := restclient.Post(UrlCreateRepo, request, header)
 	fmt.Println("response: ", response)
